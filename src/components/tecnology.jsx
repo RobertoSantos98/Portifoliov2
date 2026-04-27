@@ -16,7 +16,7 @@ export default function Tecnologias() {
     return (
         <div className='w-full h-screen max-w-6xl mx-auto flex-col items-center'>
             <div className='flex items-center justify-center'>
-                <p className='text-5xl font-bold my-5'>Projetos</p>
+                <p className='text-[26px] sm:text-5xl font-bold my-5'>Projetos</p>
 
             </div>
             <Swiper
@@ -42,11 +42,11 @@ export default function Tecnologias() {
                                 className="bg-neutral-800 flex flex-col items-center justify-center gap-3 px-6 h-100 rounded shadow-2xl w-full"
                                 id={p.id}
                             >
-                                <p className="text-orange-600 font-bold text-4xl text-center">
+                                <p className="text-orange-600 font-bold text-2xl sm:text-4xl text-center">
                                     {p.nome}
                                 </p>
 
-                                <p className="text-neutral-300 text-lg text-center">
+                                <p className="text-neutral-300 text-[12px] sm:text-lg text-center">
                                     {p.descricao}
                                 </p>
 
@@ -54,14 +54,14 @@ export default function Tecnologias() {
                                     {p.Tecnologias.map((t, index) => (
                                         <span
                                             key={index}
-                                            className="bg-neutral-700 text-sm px-2 py-1 rounded text-white"
+                                            className="bg-neutral-700 text-[12px] sm:text-sm px-2 py-1 rounded text-white"
                                         >
                                             {t}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="flex gap-2 mt-4">
+                                <div className="flex gap-2 mt-4 text-[12px] sm:text-sm">
                                     <button className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 py-2 px-4 rounded transition">
                                         <FaGithub />
                                         GitHub

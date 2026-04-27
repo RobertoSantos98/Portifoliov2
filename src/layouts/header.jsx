@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <>
             <header className="w-full absolute">
-                <nav className="max-w-6xl mx-auto flex items-end justify-end ">
+                <nav className="max-w-6xl mx-auto flex items-end sm:justify-end justify-center text-[12px]">
                     <ul className="flex items-center">
                         <li className="py-6 px-4 hover:bg-orange-600 hover:text-white">
                             <a href="" className="text-neutral-300 text-sm ">Home</a>
