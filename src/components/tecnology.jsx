@@ -1,17 +1,21 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { FaGithub, FaList } from 'react-icons/fa'
+import { FaGithub, FaList } from 'react-icons/fa';
+import { Projetos } from '../Data/Projetos/Projeto';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 export default function Tecnologias() {
 
-    const projetos = [
-        { id: 1, nome: "SimuQuestion", descricao: "Um App para gerenciar perguntas e criar cards para estudo.", Tecnologias: ["React Native com Expo", "Python"] },
-        { id: 2, nome: "FloraApp", descricao: "Um App para gerenciar plantio de arvores.", Tecnologias: ["React Native com Expo", "Java"] },
+    // const projetos = [
+    //     { id: 1, nome: "SimuQuestion", descricao: "Um App para gerenciar perguntas e criar cards para estudo.", Tecnologias: ["React Native com Expo", "Python"] },
+    //     { id: 2, nome: "FloraApp", descricao: "Um App para gerenciar plantio de arvores.", Tecnologias: ["React Native com Expo", "Java"] },
 
-    ]
+    // ]
+
+    const projetos = Projetos;
+
 
     return (
         <div className='w-full h-screen max-w-6xl mx-auto flex-col items-center'>
@@ -34,19 +38,20 @@ export default function Tecnologias() {
                 {projetos.map((p) => (
                     <SwiperSlide key={p.id}>
                         <div className='w-full min-h-130 flex items-end justify-center'>
-                            <span className="bg-neutral-400 h-52 w-52 rounded-full absolute top-0" />
+                            <span className="bg-zinc-200 h-48 w-48 rounded-full absolute top-0"/>
 
+                            <img src={p.logo} alt="logo" className='h-48 w-48 rounded-full absolute top-0' />
 
 
                             <div
-                                className="bg-neutral-800 flex flex-col items-center justify-center gap-3 px-6 h-100 rounded shadow-2xl w-full"
+                                className="bg-zinc-800 flex flex-col items-center justify-center gap-3 px-4 py-8 h-100 rounded shadow-2xl w-full"
                                 id={p.id}
                             >
-                                <p className="text-orange-600 font-bold text-2xl sm:text-4xl text-center">
+                                <p className="text-orange-600 font-bold text-2xl md:text-4xl text-center">
                                     {p.nome}
                                 </p>
 
-                                <p className="text-neutral-300 text-[12px] sm:text-lg text-center">
+                                <p className="text-neutral-300 text-[12px] md:text-lg text-center">
                                     {p.descricao}
                                 </p>
 
@@ -54,20 +59,20 @@ export default function Tecnologias() {
                                     {p.Tecnologias.map((t, index) => (
                                         <span
                                             key={index}
-                                            className="bg-neutral-700 text-[12px] sm:text-sm px-2 py-1 rounded text-white"
+                                            className="bg-neutral-700 text-[12px] md:text-sm px-2 py-1 rounded text-white"
                                         >
                                             {t}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="flex gap-2 mt-4 text-[12px] sm:text-sm">
-                                    <button className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 py-2 px-4 rounded transition">
+                                <div className="flex gap-2 mt-4 text-[12px] md:text-sm">
+                                    <button onClick={() => window.open(p.linkGit, "_blank")} className="cursor-pointer flex items-center gap-2 bg-orange-600 hover:bg-orange-700 py-2 px-4 rounded transition">
                                         <FaGithub />
                                         GitHub
                                     </button>
 
-                                    <button className="flex items-center gap-2 border border-neutral-600 hover:bg-neutral-700 py-2 px-4 rounded transition">
+                                    <button onClick={() => window.open(p.linkLinked, "_blank")} className="cursor-pointer flex items-center gap-2 border border-neutral-600 hover:bg-neutral-700 py-2 px-4 rounded transition">
                                         <FaList />
                                         Sobre
                                     </button>
