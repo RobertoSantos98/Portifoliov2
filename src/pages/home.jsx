@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaGithub, FaDownload, FaLinkedin, FaJava, FaReact, FaJs, FaHtml5, FaMobile } from 'react-icons/fa'
+import { FaGithub, FaDownload, FaLinkedin, FaJava, FaReact, FaJs, FaHtml5, FaMobile, FaLayerGroup, FaStackOverflow, FaConnectdevelop } from 'react-icons/fa'
 
 import Header from "../layouts/header";
 import ImagemHome from '../assets/img-home-content.svg'
@@ -28,7 +28,7 @@ export default function Home() {
 
     const scrooToElement = (id) => {
         const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: "smooth"});
+        element?.scrollIntoView({ behavior: "smooth" });
     }
 
     return (
@@ -69,11 +69,11 @@ export default function Home() {
                     </div>
 
                     <div className="rounded-br flex flex-col justify-center items-center flex-1 h-full w-full gap-4 border-b-4 border-r-2 border-zinc-700">
-                        <h1 className="text-[28px] sm:text-4xl font-extrabold">Roberto Santos</h1>
+                        <h1 className="text-[28px] sm:text-5xl font-extrabold font-holtwood">Roberto Santos</h1>
                         <p className="text-lg text-neutral-300">Desenvolvedor Full-Stack</p>
 
                         <div className="flex gap-2.5 text-[12px]">
-                            <button onClick={handleDownload}  className="bg-orange-600 py-2 px-4 rounded-sm flex gap-2 items-center hover:bg-orange-500 sm:text-sm cursor-pointer">
+                            <button onClick={handleDownload} className="bg-orange-600 py-2 px-4 rounded-sm flex gap-2 items-center hover:bg-orange-500 sm:text-sm cursor-pointer">
                                 <FaDownload />
                                 Curriculo
                             </button>
@@ -83,7 +83,7 @@ export default function Home() {
                                 GitHub
                             </button>
 
-                            <button onClick={() => window.open("https://www.linkedin.com/in/robertosantos98", "_blank") } className="cursor-pointer border border-neutral-300 py-2 px-4 rounded-sm flex gap-2 items-center hover:bg-neutral-800 sm:text-sm">
+                            <button onClick={() => window.open("https://www.linkedin.com/in/robertosantos98", "_blank")} className="cursor-pointer border border-neutral-300 py-2 px-4 rounded-sm flex gap-2 items-center hover:bg-neutral-800 sm:text-sm">
                                 <FaLinkedin />
                                 <a>LinkedIn</a>
                             </button>
@@ -93,6 +93,7 @@ export default function Home() {
                 </div>
             </section>
 
+
             <section id="sessaoSobre" className="w-full flex h-screen items-center justify-center text-[12px] ">
 
                 <div className="sm:max-w-6xl w-full mx-auto px-4 ">
@@ -101,7 +102,7 @@ export default function Home() {
                         <h2 className="text-[26px] md:text-5xl font-bold text-white">Sobre</h2>
 
                         <p className="wrap-break-word">
-                            Desenvolvedor Full-Stack formado em Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia e pela construção de soluções eficientes e escaláveis. Possuo experiência no desenvolvimento de aplicações mobile e web, utilizando tecnologias como React e React Native no front-end, além de conhecimentos em Flutter.
+                            Desenvolvedor <span className="font-audiowide text-orange-600">Full-Stack</span> formado em Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia e pela construção de soluções eficientes e escaláveis. Possuo experiência no desenvolvimento de aplicações mobile e web, utilizando tecnologias como React e React Native no front-end, além de conhecimentos em Flutter.
                         </p>
 
                         <p className="wrap-break-word">
@@ -140,6 +141,48 @@ export default function Home() {
 
                 </div>
             </section>
+
+            <section className="w-full flex h-screen items-center justify-center text-[12px] border-t border-b border-zinc-800">
+
+                <div>
+                    
+                    <div className="flex flex-col gap-0.5">
+                        <div className="flex justify-center gap-0.5">
+                            <div className="bg-orange-600 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
+                                <span className="text-4xl font-audiowide">+5</span>
+                                <span className="text-xl flex gap-2 items-center">
+                                    <FaLayerGroup />
+                                    <span className="wrap-break-word text-[12px]">Projetos Full-Stack completos</span>
+                                </span>
+                            </div>
+                            <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
+                                <span className="text-4xl font-audiowide"><FaStackOverflow /> </span>
+                                <span className="text-xl flex gap-2 items-center">
+                                    <span className="wrap-break-word text-[12px]">Experiência Web e Mobile</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="flex justify-center gap-0.5">
+                            <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
+                                <span className="text-4xl font-audiowide"><FaConnectdevelop /></span>
+                                <span className="text-xl flex gap-2 items-center">
+                                    <span className="wrap-break-word text-[12px]">Api RestFul</span>
+                                </span>
+                            </div>
+                            <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
+                                <span className="text-4xl font-audiowide">+20</span>
+                                <span className="text-xl flex gap-2 items-center">
+                                    <FaLayerGroup />
+                                    <span className="wrap-break-word text-[12px]">Projetos ao todo</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
 
             <div id="sessaoProjetos">
                 <Tecnologias />
