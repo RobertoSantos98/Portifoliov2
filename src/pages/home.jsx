@@ -3,6 +3,7 @@ import { FaGithub, FaDownload, FaLinkedin, FaJava, FaReact, FaJs, FaHtml5, FaMob
 
 import Header from "../layouts/header";
 import ImagemHome from '../assets/img-home-content.svg'
+import ImagemDestaque from '../assets/img-destaque.png'
 import Tecnologias from "../components/tecnology";
 import CV from "../Data/CV.pdf"
 
@@ -60,7 +61,7 @@ export default function Home() {
                 </nav>
             </header>
 
-            <section id="sessaoHome" className="w-full flex flex-1  justify-center py-16 sm:py-24 px-4 h-screen">
+            <section id="sessaoHome" className="w-full flex flex-1  justify-center py-16 sm:py-24 px-4 mx-h-323 h-screen min-h-125 max-h-323">
 
                 <div className="max-w-6xl flex-col w-full h-full flex sm:flex-row  items-center justify-center shadow">
 
@@ -142,11 +143,11 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="w-full flex h-screen items-center justify-center text-[12px] border-t border-b border-zinc-800">
+            <section className="w-full flex h-screen max-h-323 items-center justify-center text-[12px] border-t border-b border-zinc-700">
 
-                <div>
+                <div className="flex sm:flex-row flex-col-reverse w-full max-w-6xl h-full items-center justify-center">
                     
-                    <div className="flex flex-col gap-0.5">
+                    <div className="flex flex-col gap-0.5 w-full h-full items-center justify-center ">
                         <div className="flex justify-center gap-0.5">
                             <div className="bg-orange-600 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
                                 <span className="text-4xl font-audiowide">+5</span>
@@ -177,6 +178,10 @@ export default function Home() {
                                 </span>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="w-full h-full items-center flex justify-center">
+                        <img src={ImagemDestaque} alt="" className="w-80 sm:w-80 lg:w-md" />
                     </div>
 
                 </div>
