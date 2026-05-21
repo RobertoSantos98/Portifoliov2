@@ -18,7 +18,7 @@ export default function Tecnologias() {
 
 
     return (
-        <div className='w-full h-screen max-h-323 max-w-6xl mx-auto flex-col items-center justify-center'>
+        <div className='w-full h-screen max-h-323 max-w-6xl mx-auto flex-col items-center justify-center '>
             <div className='flex items-center justify-center'>
                 <p className='text-[26px] sm:text-5xl font-bold my-5'>Projetos</p>
 

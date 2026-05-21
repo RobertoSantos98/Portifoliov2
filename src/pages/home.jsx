@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaGithub, FaDownload, FaLinkedin, FaJava, FaReact, FaJs, FaHtml5, FaMobile, FaLayerGroup, FaStackOverflow, FaConnectdevelop } from 'react-icons/fa'
+import { FaFigma , FaGithub, FaDownload, FaLinkedin, FaJava, FaReact, FaJs, FaHtml5, FaMobile, FaLayerGroup, FaStackOverflow, FaConnectdevelop } from 'react-icons/fa'
 
 import Header from "../layouts/header";
 import ImagemHome from '../assets/img-home-content.svg'
@@ -16,8 +16,8 @@ export default function Home() {
         { id: 3, nome: "JavaScript", icone: <FaJs /> },
         { id: 4, nome: "HTML e CSS", icone: <FaHtml5 /> },
         { id: 5, nome: "React Native", icone: <FaMobile /> },
-        { id: 6, nome: "React Native", icone: <FaMobile /> },
-        { id: 7, nome: "React Native", icone: <FaMobile /> }
+        { id: 6, nome: "Figma", icone: <FaFigma /> },
+        { id: 7, nome: "C#", icone: "C#" }
     ];
 
     const handleDownload = () => {
@@ -95,12 +95,12 @@ export default function Home() {
             </section>
 
 
-            <section id="sessaoSobre" className="w-full flex h-screen items-center justify-center text-[12px] ">
+            <section id="sessaoSobre" className="w-full flex h-screen min-h-125 max-h-323 items-center justify-center text-[12px] ">
 
-                <div className="sm:max-w-6xl w-full mx-auto px-4 ">
+                <div className="md:max-w-6xl w-full mx-auto px-4 ">
 
-                    <div className="h-full md:text-lg w-full flex flex-col items-center gap-3.5 text-neutral-300 py-2.5 px-4">
-                        <h2 className="text-[26px] md:text-5xl font-bold text-white">Sobre</h2>
+                    <div className="h-full lg:text-lg w-full flex flex-col items-center gap-3.5 text-neutral-300 py-2.5 px-4">
+                        <h2 className="text-[26px] lg:text-5xl font-bold text-white">Sobre</h2>
 
                         <p className="wrap-break-word">
                             Desenvolvedor <span className="font-audiowide text-orange-600">Full-Stack</span> formado em Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia e pela construção de soluções eficientes e escaláveis. Possuo experiência no desenvolvimento de aplicações mobile e web, utilizando tecnologias como React e React Native no front-end, além de conhecimentos em Flutter.
@@ -116,7 +116,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col items-center py-2.5 w-full gap-6 ">
-                        <h3 className="text-[26px] md:text-5xl font-bold text-white">
+                        <h3 className="text-[26px] lg:text-5xl font-bold text-white">
                             Tecnologias e Ferramentas
                         </h3>
 
@@ -143,21 +143,21 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="w-full flex h-screen max-h-323 items-center justify-center text-[12px] border-t border-b border-zinc-700">
+            <section className="w-full flex h-screen max-h-323 min-h-125 items-center justify-center text-[12px] border-t border-b border-zinc-700">
 
-                <div className="flex sm:flex-row flex-col-reverse w-full max-w-6xl h-full items-center justify-center">
+                <div className="flex sm:flex-row flex-col-reverse w-full max-w-6xl h-full items-center justify-center ">
                     
                     <div className="flex flex-col gap-0.5 w-full h-full items-center justify-center ">
                         <div className="flex justify-center gap-0.5">
                             <div className="bg-orange-600 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
-                                <span className="text-4xl font-audiowide">+5</span>
+                                <span className="lg:text-4xl text-3xl font-audiowide">+5</span>
                                 <span className="text-xl flex gap-2 items-center">
                                     <FaLayerGroup />
                                     <span className="wrap-break-word text-[12px]">Projetos Full-Stack completos</span>
                                 </span>
                             </div>
                             <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
-                                <span className="text-4xl font-audiowide"><FaStackOverflow /> </span>
+                                <span className="lg:text-4xl text-3xl font-audiowide"><FaStackOverflow /> </span>
                                 <span className="text-xl flex gap-2 items-center">
                                     <span className="wrap-break-word text-[12px]">Experiência Web e Mobile</span>
                                 </span>
@@ -165,13 +165,13 @@ export default function Home() {
                         </div>
                         <div className="flex justify-center gap-0.5">
                             <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
-                                <span className="text-4xl font-audiowide"><FaConnectdevelop /></span>
+                                <span className="lg:text-4xl text-3xl font-audiowide"><FaConnectdevelop /></span>
                                 <span className="text-xl flex gap-2 items-center">
                                     <span className="wrap-break-word text-[12px]">Api RestFul</span>
                                 </span>
                             </div>
                             <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
-                                <span className="text-4xl font-audiowide">+20</span>
+                                <span className="lg:text-4xl text-3xl font-audiowide">+20</span>
                                 <span className="text-xl flex gap-2 items-center">
                                     <FaLayerGroup />
                                     <span className="wrap-break-word text-[12px]">Projetos ao todo</span>
@@ -193,7 +193,7 @@ export default function Home() {
                 <Tecnologias />
             </div>
 
-            <div className="bg-orange-600 flex h-74 justify-center items-end py-8">
+            <div className="bg-orange-600 flex lg:h-74 h-36 justify-center items-end py-8">
                 Roberto Santos © 2026
             </div>
 
