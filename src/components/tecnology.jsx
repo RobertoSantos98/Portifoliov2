@@ -18,71 +18,74 @@ export default function Tecnologias() {
 
 
     return (
-        <div className='w-full h-screen max-h-323 max-w-6xl mx-auto flex-col items-center justify-center '>
-            <div className='flex items-center justify-center'>
-                <p className='text-[26px] sm:text-5xl font-bold my-5'>Projetos</p>
+        <div className='flex items-center justify-center w-full h-screen max-h-323 max-w-6xl mx-auto'>
+            <div className='w-full mx-auto flex-col items-center justify-center '>
+                <div className='flex items-center justify-center'>
+                    <p className='text-[26px] sm:text-5xl font-bold my-5'>Projetos</p>
+                </div>
 
-            </div>
-            <Swiper
-                modules={[Autoplay, Pagination]}
-                spaceBetween={50}
-                slidesPerView={1}
-                autoplay={{ delay: 3000 }}
-                pagination={{ clickable: true }}
-                effect='coverflow'
-                style={{
-                    "--swiper-pagination-color": "#f97316", // ativa (laranja)
-                    "--swiper-pagination-bullet-inactive-color": "#525252", // inativa
-                }}
-            >
-                {projetos.map((p) => (
-                    <SwiperSlide key={p.id}>
-                        <div className='w-full min-h-130 flex items-end justify-center'>
-                            <span className="bg-zinc-200 h-48 w-48 rounded-full absolute top-0"/>
+                <Swiper
+                    modules={[Autoplay, Pagination]}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    autoplay={{ delay: 3000 }}
+                    pagination={{ clickable: true }}
+                    effect='cards'
+                    style={{
+                        "--swiper-pagination-color": "#f97316", // ativa (laranja)
+                        "--swiper-pagination-bullet-inactive-color": "#525252", // inativa
+                    }}
+                >
+                    {projetos.map((p) => (
+                        <SwiperSlide key={p.id}>
+                            <div className='w-full min-h-130 flex items-end justify-center'>
+                                <span className="bg-zinc-200 h-48 w-48 rounded-full absolute top-0" />
 
-                            <img src={p.logo} alt="logo" className='h-48 w-48 rounded-full absolute top-0' />
+                                <img src={p.logo} alt="logo" className='h-48 w-48 rounded-full absolute top-0' />
 
 
-                            <div
-                                className="bg-zinc-800 flex flex-col items-center justify-center gap-3 px-4 py-8 h-100 rounded shadow-2xl w-full"
-                                id={p.id}
-                            >
-                                <p className="text-orange-600 font-bold text-2xl md:text-4xl text-center">
-                                    {p.nome}
-                                </p>
+                                <div
+                                    className="bg-zinc-800 flex flex-col items-center justify-end gap-3 px-4 py-14 h-100 shadow-2xl w-full"
+                                    id={p.id}
+                                >
+                                    <p className="text-orange-600 font-bold text-2xl md:text-4xl text-center">
+                                        {p.nome}
+                                    </p>
 
-                                <p className="text-neutral-300 text-[12px] md:text-lg text-center">
-                                    {p.descricao}
-                                </p>
+                                    <div className="flex flex-wrap justify-center gap-2 mt-2">
+                                        {p.Tecnologias.map((t, index) => (
+                                            <span
+                                                key={index}
+                                                className="bg-neutral-700 text-[12px] md:text-sm px-2 py-1 rounded text-white"
+                                            >
+                                                {t}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <p className="text-neutral-300 text-[12px] md:text-lg text-center">
+                                        {p.descricao}
+                                    </p>
 
-                                <div className="flex flex-wrap justify-center gap-2 mt-2">
-                                    {p.Tecnologias.map((t, index) => (
-                                        <span
-                                            key={index}
-                                            className="bg-neutral-700 text-[12px] md:text-sm px-2 py-1 rounded text-white"
-                                        >
-                                            {t}
-                                        </span>
-                                    ))}
+
+                                    <div className="flex gap-2 mt-4 text-[12px] md:text-sm">
+                                        <button onClick={() => window.open(p.linkGit, "_blank")} className="cursor-pointer flex items-center gap-2 bg-orange-600 hover:bg-orange-700 py-2 px-4 rounded transition">
+                                            <FaGithub />
+                                            GitHub
+                                        </button>
+
+                                        <button onClick={() => window.open(p.linkLinked, "_blank")} className="cursor-pointer flex items-center gap-2 border border-neutral-600 hover:bg-neutral-700 py-2 px-4 rounded transition">
+                                            <FaList />
+                                            Sobre
+                                        </button>
+                                    </div>
                                 </div>
 
-                                <div className="flex gap-2 mt-4 text-[12px] md:text-sm">
-                                    <button onClick={() => window.open(p.linkGit, "_blank")} className="cursor-pointer flex items-center gap-2 bg-orange-600 hover:bg-orange-700 py-2 px-4 rounded transition">
-                                        <FaGithub />
-                                        GitHub
-                                    </button>
-
-                                    <button onClick={() => window.open(p.linkLinked, "_blank")} className="cursor-pointer flex items-center gap-2 border border-neutral-600 hover:bg-neutral-700 py-2 px-4 rounded transition">
-                                        <FaList />
-                                        Sobre
-                                    </button>
-                                </div>
                             </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
 
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
         </div>
     )
 }

@@ -39,7 +39,7 @@ export default function Home() {
                 <nav className="max-w-6xl mx-auto flex items-end sm:justify-end justify-center text-[12px]">
                     <ul className="flex items-center">
                         <li onClick={() => scrooToElement("sessaoHome")} className="py-6 px-4 hover:bg-orange-600 hover:text-white">
-                            <span className="text-neutral-300 text-sm ">Home</span>
+                            <span className="text-neutral-300 text-sm">Home</span>
                         </li>
 
                         <li onClick={() => scrooToElement("sessaoSobre")} className="py-6 px-4 hover:bg-orange-600 text-white">
@@ -51,7 +51,7 @@ export default function Home() {
                         </li>
 
                         <li className="py-2 px-2 text-white">
-                            <button className="bg-orange-600 hover:bg-orange-500 hover:text-white py-4 px-5 rounded">
+                            <button onClick={() => window.open("https://www.linkedin.com/in/robertosantos98", "_blank")} className="bg-orange-600 hover:bg-orange-500 hover:text-white py-4 px-5 rounded">
                                 <span className="text-neutral-300 text-sm hover:text-white">Contato</span>
                             </button>
                         </li>
@@ -70,8 +70,8 @@ export default function Home() {
                     </div>
 
                     <div className="rounded-br flex flex-col justify-center items-center flex-1 h-full w-full gap-4 border-b-4 border-r-2 border-zinc-700">
-                        <h1 className="text-[28px] sm:text-5xl font-extrabold font-holtwood">Roberto Santos</h1>
-                        <p className="text-lg text-neutral-300">Desenvolvedor Full-Stack</p>
+                        <h1 className="text-[28px] sm:text-5xl font-extrabold font-merriweather">Roberto Santos</h1>
+                        <p className="text-lg text-neutral-300 font-roboto">Desenvolvedor <span className="text-orange-500">Full-Stack</span></p>
 
                         <div className="flex gap-2.5 text-[12px]">
                             <button onClick={handleDownload} className="bg-orange-600 py-2 px-4 rounded-sm flex gap-2 items-center hover:bg-orange-500 sm:text-sm cursor-pointer">
