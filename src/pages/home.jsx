@@ -1,137 +1,183 @@
 import { useState } from "react";
-import { FaFigma , FaGithub, FaDownload, FaLinkedin, FaJava, FaReact, FaJs, FaHtml5, FaMobile, FaLayerGroup, FaStackOverflow, FaConnectdevelop } from 'react-icons/fa'
+import {
+    FaFigma, FaGithub, FaDownload, FaLinkedin, FaJava, FaReact, FaJs,
+    FaHtml5, FaMobile, FaLayerGroup, FaStackOverflow, FaConnectdevelop,
+    FaCode
+} from 'react-icons/fa';
 
 import Header from "../layouts/header";
-import ImagemHome from '../assets/img-home-content.svg'
-import ImagemDestaque from '../assets/img-destaque.png'
+import ImagemHome from '../assets/img-home-content.svg';
+import ImagemDestaque from '../assets/img-destaque.png';
 import Tecnologias from "../components/tecnology";
-import CV from "../Data/CV.pdf"
-
+import CV from "../Data/CV.pdf";
 
 export default function Home() {
 
     const tec = [
         { id: 1, nome: "Java", icone: <FaJava /> },
-        { id: 2, nome: "React", icone: <FaReact /> },
-        { id: 3, nome: "JavaScript", icone: <FaJs /> },
-        { id: 4, nome: "HTML e CSS", icone: <FaHtml5 /> },
-        { id: 5, nome: "React Native", icone: <FaMobile /> },
-        { id: 6, nome: "Figma", icone: <FaFigma /> },
-        { id: 7, nome: "C#", icone: "C#" }
+        { id: 2, nome: "C#", icone: <FaCode /> },
+        { id: 3, nome: "React", icone: <FaReact /> },
+        { id: 4, nome: "JavaScript", icone: <FaJs /> },
+        { id: 5, nome: "HTML e CSS", icone: <FaHtml5 /> },
+        { id: 6, nome: "React Native", icone: <FaMobile /> },
+        { id: 7, nome: "Figma", icone: <FaFigma /> }
     ];
 
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = CV;
-        link.download = 'CV-RobertoSantos.pdf'
-        link.click();
-    }
-
-    const scrooToElement = (id) => {
+    const scrollToElement = (id) => {
         const element = document.getElementById(id);
         element?.scrollIntoView({ behavior: "smooth" });
-    }
+    };
 
     return (
-        <div className="bg-zinc-900 text-white">
+        <div className="bg-zinc-950 text-white font-roboto antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden">
 
-            <header className="w-full absolute">
-                <nav className="max-w-6xl mx-auto flex items-end sm:justify-end justify-center text-[12px]">
-                    <ul className="flex items-center">
-                        <li onClick={() => scrooToElement("sessaoHome")} className="py-6 px-4 hover:bg-orange-600 hover:text-white">
-                            <span className="text-neutral-300 text-sm">Home</span>
-                        </li>
+            {/* Ambient Glow Effects (Luzes de fundo sutis) */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-[120vh] right-1/4 w-[500px] h-[500px] bg-zinc-800/20 rounded-full blur-3xl pointer-events-none" />
 
-                        <li onClick={() => scrooToElement("sessaoSobre")} className="py-6 px-4 hover:bg-orange-600 text-white">
-                            <span className="text-neutral-300 text-sm">Sobre</span>
-                        </li>
-
-                        <li onClick={() => scrooToElement("sessaoProjetos")} className="py-6 px-4 hover:bg-orange-600 text-white">
-                            <span className="text-neutral-300 text-sm">Projetos</span>
-                        </li>
-
-                        <li className="py-2 px-2 text-white">
-                            <button onClick={() => window.open("https://www.linkedin.com/in/robertosantos98", "_blank")} className="bg-orange-600 hover:bg-orange-500 hover:text-white py-4 px-5 rounded">
-                                <span className="text-neutral-300 text-sm hover:text-white">Contato</span>
+            {/* Header Flutuante Premium com Glassmorphism */}
+            <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl bg-zinc-900/70 backdrop-blur-md border border-zinc-800/80 rounded-full px-2 py-1.5 shadow-xl shadow-black/40">
+                <nav className="w-full">
+                    <ul className="flex items-center justify-between sm:justify-end sm:gap-2">
+                        <li className="flex-1 sm:flex-initial text-center">
+                            <button onClick={() => scrollToElement("sessaoHome")} className="w-full py-2 px-4 hover:text-orange-500 text-neutral-400 text-sm font-medium transition-colors">
+                                Home
                             </button>
                         </li>
-
-
+                        <li className="flex-1 sm:flex-initial text-center">
+                            <button onClick={() => scrollToElement("sessaoSobre")} className="w-full py-2 px-4 hover:text-orange-500 text-neutral-400 text-sm font-medium transition-colors">
+                                Sobre
+                            </button>
+                        </li>
+                        <li className="flex-1 sm:flex-initial text-center">
+                            <button onClick={() => scrollToElement("sessaoProjetos")} className="w-full py-2 px-4 hover:text-orange-500 text-neutral-400 text-sm font-medium transition-colors">
+                                Projetos
+                            </button>
+                        </li>
+                        <li className="pl-2">
+                            <a
+                                href="https://www.linkedin.com/in/robertosantos98"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-block bg-orange-600 hover:bg-orange-500 text-white text-xs sm:text-sm font-semibold py-2 px-5 rounded-full transition-all duration-200 shadow-md shadow-orange-600/20"
+                            >
+                                Contato
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </header>
 
-            <section id="sessaoHome" className="w-full flex flex-1  justify-center py-16 sm:py-24 px-4 mx-h-323 h-screen min-h-125 max-h-323">
+            {/* Seção Hero / Home */}
+            {/* md:h-screen garante que no notebook o container ocupe exatamente o tamanho da janela, sem scroll */}
+            <section id="sessaoHome" className="w-full min-h-screen md:h-screen flex items-center justify-center py-24 md:py-0 px-4 md:px-12 relative box-border">
 
-                <div className="max-w-6xl flex-col w-full h-full flex sm:flex-row  items-center justify-center shadow">
+                {/* 
+      h-auto no mobile para fluir bem, md:h-[70vh] para notebooks.
+      O segredo está no max-h-[520px] que impede o bloco de estourar em telas de laptop menores.
+    */}
+                <div className="w-[95vw] max-w-7xl h-auto md:h-[70vh] max-h-[520px] lg:max-h-[680px] flex flex-col md:flex-row items-stretch justify-center shadow-2xl rounded-3xl bg-zinc-900/10 backdrop-blur-sm border border-zinc-900/50 relative">
 
-                    <div className="rounded-tl flex flex-1 items-end sm:items-center justify-center h-full w-full border-l-2 border-t-2 border-orange-600">
-                        <img src={ImagemHome} alt="" className="w-80 sm:w-80 lg:w-md" />
+                    {/* Efeito sutil de luz interna no grande painel */}
+                    <div className="absolute inset-0 bg-linear-to-tr from-orange-600/[0.02] to-transparent rounded-3xl pointer-events-none" />
+
+       
+                    <div className="flex flex-1 items-center justify-center border-l-2 border-t-2 border-orange-600 p-6 md:p-8 rounded-t-3xl md:rounded-tr-none md:rounded-bl-none md:rounded-tl-3xl relative">
+                        <div className="absolute inset-0 bg-orange-600/1 rounded-full blur-3xl pointer-events-none" />
+
+              
+                        <img
+                            src={ImagemHome}
+                            alt="Ilustração"
+                            className="w-56 sm:w-72 md:w-80 lg:w-96 xl:w-[400px] max-h-[85%] object-contain drop-shadow-2xl transition-transform duration-700 hover:scale-[1.02]"
+                        />
                     </div>
 
-                    <div className="rounded-br flex flex-col justify-center items-center flex-1 h-full w-full gap-4 border-b-4 border-r-2 border-zinc-700">
-                        <h1 className="text-[28px] sm:text-5xl font-extrabold font-merriweather">Roberto Santos</h1>
-                        <p className="text-lg text-neutral-300 font-roboto">Desenvolvedor <span className="text-orange-500">Full-Stack</span></p>
+             
+                    <div className="flex flex-col justify-center items-center md:items-start flex-1 border-r-4 border-b-4 border-zinc-700 rounded-b-3xl md:rounded-bl-none md:rounded-tr-none md:rounded-br-3xl p-6 sm:p-10 md:p-12 lg:p-16 bg-zinc-950/20">
 
-                        <div className="flex gap-2.5 text-[12px]">
-                            <button onClick={handleDownload} className="bg-orange-600 py-2 px-4 rounded-sm flex gap-2 items-center hover:bg-orange-500 sm:text-sm cursor-pointer">
-                                <FaDownload />
-                                Curriculo
-                            </button>
-
-                            <button onClick={() => window.open("https://www.github.com/RobertoSantos98", "_blank")} className="border border-neutral-300 py-2 px-4 rounded-sm flex gap-2 items-center hover:bg-neutral-800 sm:text-sm cursor-pointer">
-                                <FaGithub />
-                                GitHub
-                            </button>
-
-                            <button onClick={() => window.open("https://www.linkedin.com/in/robertosantos98", "_blank")} className="cursor-pointer border border-neutral-300 py-2 px-4 rounded-sm flex gap-2 items-center hover:bg-neutral-800 sm:text-sm">
-                                <FaLinkedin />
-                                <a>LinkedIn</a>
-                            </button>
+                       
+                        <div className="space-y-2 text-center md:text-left w-full">
+                            <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold font-merriweather tracking-tight leading-tight text-white">
+                                Roberto Santos
+                            </h1>
+                            <p className="text-lg sm:text-xl lg:text-2xl text-neutral-400 font-light">
+                                Desenvolvedor <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent font-bold">Full-Stack</span>
+                            </p>
                         </div>
+
+                     
+                        <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-6 text-xs w-full">
+                            <a
+                                href={CV}
+                                download="CV-RobertoSantos.pdf"
+                                className="bg-orange-600 hover:bg-orange-500 py-3 px-5 rounded-xl flex gap-2 items-center text-sm font-semibold transition-all duration-300 hover:scale-[1.03] shadow-lg shadow-orange-600/20 cursor-pointer text-white"
+                            >
+                                <FaDownload />
+                                Currículo
+                            </a>
+
+                            <a
+                                href="https://www.github.com/RobertoSantos98"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="bg-zinc-900/90 border border-zinc-800 hover:border-orange-500/50 py-3 px-5 rounded-xl flex gap-2 items-center text-sm font-medium transition-all duration-300 hover:scale-[1.03] shadow-md cursor-pointer text-neutral-200 hover:text-white"
+                            >
+                                <FaGithub className="text-base" />
+                                GitHub
+                            </a>
+
+                            <a
+                                href="https://www.linkedin.com/in/robertosantos98"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="bg-zinc-900/90 border border-zinc-800 hover:border-orange-500/50 py-3 px-5 rounded-xl flex gap-2 items-center text-sm font-medium transition-all duration-300 hover:scale-[1.03] shadow-md cursor-pointer text-neutral-200 hover:text-white"
+                            >
+                                <FaLinkedin className="text-base text-blue-400" />
+                                LinkedIn
+                            </a>
+                        </div>
+
                     </div>
 
                 </div>
             </section>
 
+            {/* Seção Sobre */}
+            <section id="sessaoSobre" className="w-full flex min-h-screen items-center justify-center py-20 border-t border-zinc-900 bg-zinc-950/40">
+                <div className="max-w-5xl w-full mx-auto px-4">
 
-            <section id="sessaoSobre" className="w-full flex h-screen min-h-125 max-h-323 items-center justify-center text-[12px] ">
+                    <div className="w-full flex flex-col items-center gap-6 text-neutral-300 px-4 text-center">
+                        <h2 className="text-3xl lg:text-5xl font-extrabold text-white tracking-tight">Sobre Mim</h2>
+                        <div className="w-16 h-1 bg-orange-600 rounded-full -mt-2" />
 
-                <div className="md:max-w-6xl w-full mx-auto px-4 ">
-
-                    <div className="h-full lg:text-lg w-full flex flex-col items-center gap-3.5 text-neutral-300 py-2.5 px-4">
-                        <h2 className="text-[26px] lg:text-5xl font-bold text-white">Sobre</h2>
-
-                        <p className="wrap-break-word">
-                            Desenvolvedor <span className="font-audiowide text-orange-600">Full-Stack</span> formado em Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia e pela construção de soluções eficientes e escaláveis. Possuo experiência no desenvolvimento de aplicações mobile e web, utilizando tecnologias como React e React Native no front-end, além de conhecimentos em Flutter.
-                        </p>
-
-                        <p className="wrap-break-word">
-                            No back-end, tenho experiência com Node.js, C# (.NET) e Java com Spring Boot, atuando na criação de APIs RESTful, integração com bancos de dados relacionais como PostgreSQL e aplicação de boas práticas de arquitetura, como o padrão MVC.
-                        </p>
-
-                        <p className="wrap-break-word">
-                            Estou sempre em busca de evolução constante, aprimorando minhas habilidades técnicas e explorando novas tecnologias, com foco em desenvolver soluções que gerem valor real para os usuários.
-                        </p>
+                        <div className="space-y-4 max-w-3xl text-sm sm:text-base md:text-lg leading-relaxed text-neutral-400 font-normal">
+                            <p>
+                                Desenvolvedor <span className="font-semibold text-orange-500">Full-Stack</span> formado em Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia e pela construção de soluções eficientes e escaláveis. Possuo experiência no desenvolvimento de aplicações mobile e web, utilizando tecnologias como <strong>React</strong> e <strong>React Native</strong> no front-end.
+                            </p>
+                            <p>
+                                No back-end, sou focado no ecossistema <strong>.NET (C#)</strong> e <strong>Java com Spring Boot</strong>, atuando na criação de <strong>Web APIs RESTful</strong> robustas, integração com bancos de dados relacionais (PostgreSQL/SQL Server) e aplicação de boas práticas de arquitetura, como <strong>Clean Architecture</strong> e princípios <strong>SOLID</strong>.
+                            </p>
+                        </div>
                     </div>
 
-                    <div className="flex flex-col items-center py-2.5 w-full gap-6 ">
-                        <h3 className="text-[26px] lg:text-5xl font-bold text-white">
+                    {/* Tecnologias Horizontal List Refinada */}
+                    <div className="flex flex-col items-center mt-16 w-full gap-6">
+                        <h3 className="text-xl lg:text-2xl font-bold text-zinc-400">
                             Tecnologias e Ferramentas
                         </h3>
 
-                        <div className="overflow-x-auto w-full">
-                            <div className="flex gap-6 w-max px-2">
+                        <div className="overflow-x-auto w-full scrollbar-none py-4">
+                            <div className="flex gap-4 w-max mx-auto px-4">
                                 {tec.map((t) => (
                                     <div
                                         key={t.id}
-                                        className="flex flex-col items-center justify-center h-36 w-32 border border-neutral-300 rounded-md hover:bg-orange-600 hover:border-0 transition"
+                                        className="flex flex-col items-center justify-center h-32 w-28 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:bg-zinc-900 hover:border-orange-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-orange-600/5 group"
                                     >
-                                        <span className="text-6xl text-zinc-100">
+                                        <span className="text-4xl text-zinc-400 group-hover:text-orange-500 transition-colors duration-300">
                                             {t.icone}
                                         </span>
-
-                                        <span className="text-sm mt-2 text-zinc-100 text-center break-words">
+                                        <span className="text-xs mt-3 text-zinc-400 group-hover:text-zinc-200 text-center font-medium transition-colors">
                                             {t.nome}
                                         </span>
                                     </div>
@@ -143,60 +189,69 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="w-full flex h-screen max-h-323 min-h-125 items-center justify-center text-[12px] border-t border-b border-zinc-700">
+            {/* Seção Métricas em Formato Bento Grid */}
+            <section className="w-full flex min-h-screen items-center justify-center border-t border-b border-zinc-900 py-20 px-4">
+                <div className="flex flex-col lg:flex-row w-full max-w-6xl items-center justify-center gap-12">
 
-                <div className="flex sm:flex-row flex-col-reverse w-full max-w-6xl h-full items-center justify-center ">
-                    
-                    <div className="flex flex-col gap-0.5 w-full h-full items-center justify-center ">
-                        <div className="flex justify-center gap-0.5">
-                            <div className="bg-orange-600 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
-                                <span className="lg:text-4xl text-3xl font-audiowide">+5</span>
-                                <span className="text-xl flex gap-2 items-center">
-                                    <FaLayerGroup />
-                                    <span className="wrap-break-word text-[12px]">Projetos Full-Stack completos</span>
-                                </span>
-                            </div>
-                            <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
-                                <span className="lg:text-4xl text-3xl font-audiowide"><FaStackOverflow /> </span>
-                                <span className="text-xl flex gap-2 items-center">
-                                    <span className="wrap-break-word text-[12px]">Experiência Web e Mobile</span>
-                                </span>
+                    {/* Grid de Alta Performance (Bento Style) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xl">
+
+                        {/* Card Grande Laranja */}
+                        <div className="bg-gradient-to-br from-orange-600 to-amber-600 flex items-start flex-col justify-between p-6 h-44 rounded-3xl shadow-xl shadow-orange-600/5 sm:col-span-2 transform hover:scale-[1.01] transition-transform">
+                            <span className="text-5xl font-black font-merriweather tracking-tight">+5</span>
+                            <div>
+                                <h4 className="text-lg font-bold leading-tight">Projetos Full-Stack</h4>
+                                <p className="text-xs text-orange-100/80 mt-1">Sistemas completos desenvolvidos de ponta a ponta.</p>
                             </div>
                         </div>
-                        <div className="flex justify-center gap-0.5">
-                            <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
-                                <span className="lg:text-4xl text-3xl font-audiowide"><FaConnectdevelop /></span>
-                                <span className="text-xl flex gap-2 items-center">
-                                    <span className="wrap-break-word text-[12px]">Api RestFul</span>
-                                </span>
+
+                        {/* Card Web e Mobile */}
+                        <div className="bg-zinc-900 border border-zinc-800/80 flex items-start flex-col justify-between p-6 h-44 rounded-3xl transform hover:scale-[1.01] transition-transform group hover:border-zinc-700">
+                            <span className="text-3xl text-orange-500"><FaStackOverflow /></span>
+                            <div>
+                                <h4 className="text-sm font-bold text-zinc-200 group-hover:text-white transition-colors">Web & Mobile</h4>
+                                <p className="text-xs text-neutral-400 mt-1">Interfaces responsivas e aplicativos nativos fluidos.</p>
                             </div>
-                            <div className="bg-zinc-800 flex items-center flex-col w-40 h-40 justify-center p-2 gap-3">
-                                <span className="lg:text-4xl text-3xl font-audiowide">+20</span>
-                                <span className="text-xl flex gap-2 items-center">
-                                    <FaLayerGroup />
-                                    <span className="wrap-break-word text-[12px]">Projetos ao todo</span>
-                                </span>
+                        </div>
+
+                        {/* Card APIs */}
+                        <div className="bg-zinc-900 border border-zinc-800/80 flex items-start flex-col justify-between p-6 h-44 rounded-3xl transform hover:scale-[1.01] transition-transform group hover:border-zinc-700">
+                            <span className="text-3xl text-orange-500"><FaConnectdevelop /></span>
+                            <div>
+                                <h4 className="text-sm font-bold text-zinc-200 group-hover:text-white transition-colors">APIs RESTful</h4>
+                                <p className="text-xs text-neutral-400 mt-1">Back-ends performáticos construídos em C# e Java.</p>
+                            </div>
+                        </div>
+
+                        {/* Card Total Repos */}
+                        <div className="bg-zinc-900 border border-zinc-800/80 flex items-start flex-col justify-between p-6 h-40 rounded-3xl sm:col-span-2 transform hover:scale-[1.01] transition-transform group hover:border-zinc-700 flex-row items-center gap-4">
+                            <span className="text-4xl font-black text-zinc-700 group-hover:text-orange-500/80 transition-colors">+20</span>
+                            <div>
+                                <h4 className="text-sm font-bold text-zinc-200 group-hover:text-white transition-colors">Projetos e Repositórios</h4>
+                                <p className="text-xs text-neutral-400 mt-0.5">Códigos limpos, versionados e estruturados no GitHub.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="w-full h-full items-center flex justify-center">
-                        <img src={ImagemDestaque} alt="" className="w-80 sm:w-80 lg:w-md" />
+                    {/* Imagem de Destaque Lateral */}
+                    <div className="w-full max-w-md items-center flex justify-center relative">
+                        <div className="absolute inset-0 bg-orange-600/5 rounded-full blur-3xl pointer-events-none" />
+                        <img src={ImagemDestaque} alt="Destaques do Ecossistema" className="w-80 lg:w-md drop-shadow-2xl opacity-90 hover:opacity-100 transition-opacity duration-300" />
                     </div>
 
                 </div>
-
             </section>
 
-
-            <div id="sessaoProjetos">
+            {/* Container de Projetos (Carrossel Swiper) */}
+            <div id="sessaoProjetos" className="bg-zinc-950/20">
                 <Tecnologias />
             </div>
 
-            <div className="bg-orange-600 flex lg:h-74 h-36 justify-center items-end py-8">
-                Roberto Santos © 2026
-            </div>
+            {/* Footer Minimalista e Moderno */}
+            <footer className="border-t border-zinc-900 bg-zinc-950 flex h-24 justify-center items-center text-xs sm:text-sm text-neutral-500 font-medium tracking-wide">
+                <span>Roberto Santos &copy; 2026 &bull; Todos os direitos reservados.</span>
+            </footer>
 
         </div>
-    )
+    );
 }
