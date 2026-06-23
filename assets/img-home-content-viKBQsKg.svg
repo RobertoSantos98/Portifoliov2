@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <defs>
+    <!-- Filtro de Brilho Neon (Glow) -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="35" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Gradientes de Cores -->
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#27272a" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Luz de Fundo Laranja Embutida (Glow de ambiente) -->
+  <circle cx="400" cy="400" r="160" fill="#f97316" fill-opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Linhas de Conexão Full-Stack (Back-end ligado ao Front-end) -->
+  <path d="M 180 520 L 320 380 L 520 380 L 680 220" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="6 6" />
+  <path d="M 220 580 L 420 420 L 580 580" stroke="url(#lineGrad)" stroke-width="1.5" />
+
+  <!-- Nós de Redes/APIs -->
+  <circle cx="320" cy="380" r="5" fill="#f97316" />
+  <circle cx="520" cy="380" r="6" fill="#f97316" filter="url(#glow)" />
+  <circle cx="420" cy="420" r="4" fill="#71717a" />
+  <circle cx="580" cy="580" r="5" fill="#ea580c" />
+
+  <!-- Janela de Código / IDE (Representando o Back-end robusto) -->
+  <g transform="matrix(0.92 0 -0.08 0.92 60 50)">
+    <!-- Corpo da Janela Mac/IDE -->
+    <rect x="180" y="220" width="380" height="260" rx="16" fill="url(#darkGrad)" stroke="#27272a" stroke-width="2" />
+    <!-- Botões de Controle -->
+    <circle cx="210" cy="245" r="5" fill="#ef4444" fill-opacity="0.8"/>
+    <circle cx="225" cy="245" r="5" fill="#eab308" fill-opacity="0.8"/>
+    <circle cx="240" cy="245" r="5" fill="#22c55e" fill-opacity="0.8"/>
+    <!-- Linhas de Código Simbolizadas -->
+    <rect x="210" y="285" width="130" height="8" rx="4" fill="#f97316" fill-opacity="0.8"/>
+    <rect x="210" y="305" width="240" height="8" rx="4" fill="#71717a" fill-opacity="0.4"/>
+    <rect x="230" y="325" width="180" height="8" rx="4" fill="#f97316" fill-opacity="0.6"/>
+    <rect x="230" y="345" width="280" height="8" rx="4" fill="#e4e4e7" fill-opacity="0.9"/>
+    <rect x="260" y="365" width="150" height="8" rx="4" fill="#71717a" fill-opacity="0.5"/>
+    <rect x="260" y="385" width="190" height="8" rx="4" fill="#f97316" fill-opacity="0.4"/>
+    <rect x="210" y="415" width="100" height="8" rx="4" fill="#ea580c" />
+  </g>
+
+  <!-- Card de Interface / Mobile & Web (Representando o Front-end e UI/UX) -->
+  <g transform="matrix(0.96 0 0 0.96 30 40)">
+    <!-- Painel com Efeito de Vidro Fosco -->
+    <rect x="420" y="340" width="250" height="300" rx="24" fill="#1c1917" fill-opacity="0.4" stroke="#f97316" stroke-width="1.5" stroke-opacity="0.3" />
+    
+    <!-- Elemento Interno do Card (Dashboard Mockup) -->
+    <rect x="445" y="380" width="200" height="120" rx="14" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    
+    <!-- Gráfico Circular Neon dentro do Painel -->
+    <circle cx="545" cy="440" r="28" fill="none" stroke="#27272a" stroke-width="5"/>
+    <circle cx="545" cy="440" r="28" fill="none" stroke="url(#orangeGrad)" stroke-width="5" stroke-dasharray="130 200" stroke-linecap="round" filter="url(#glow)" />
+    
+    <!-- Detalhes de Texto da UI -->
+    <rect x="445" y="525" width="90" height="12" rx="6" fill="#f97316" />
+    <rect x="445" y="550" width="150" height="7" rx="3.5" fill="#71717a" fill-opacity="0.6" />
+    <rect x="445" y="565" width="120" height="7" rx="3.5" fill="#71717a" fill-opacity="0.4" />
+
+    <!-- Botão Switch de Interface -->
+    <rect x="600" y="525" width="45" height="20" rx="10" fill="#27272a" />
+    <circle cx="632" cy="535" r="7" fill="url(#orangeGrad)" />
+  </g>
+
+  <!-- Símbolos Flutuantes de Sintaxe (.NET / Código) -->
+  <text x="140" y="200" fill="#f97316" fill-opacity="0.25" font-family="monospace" font-size="65" font-weight="bold" filter="url(#glow)">&lt;/&gt;</text>
+  <text x="620" y="270" fill="#71717a" fill-opacity="0.2" font-family="monospace" font-size="90" font-weight="light">&#123;</text>
+  <text x="690" y="560" fill="#f97316" fill-opacity="0.1" font-family="monospace" font-size="80" font-weight="light">&#125;</text>
+</svg>
