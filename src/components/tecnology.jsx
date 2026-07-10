@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaChevronRight } from 'react-icons/fa';
 import { Projetos as listaProjetos } from '../Data/Projetos/Projeto';
 
 // Imports obrigatórios do Swiper
@@ -39,7 +39,7 @@ export default function Projetos() {
                     }}
                 >
                     {listaProjetos.map((p) => (
-                        <SwiperSlide key={p.id} className="h-full">
+                        <SwiperSlide key={p.id} className="h-full" >
                             <div className='relative pt-12 h-full flex flex-col items-center'>
                                 
                                 {/* Container da Imagem/Logo centralizada na borda superior do card */}
@@ -78,6 +78,16 @@ export default function Projetos() {
                                         </p>
                                     </div>
 
+                                        {p.deploy && (
+                                            <a 
+                                            href={p.deploy}
+                                            className='group flex-1 w-full text-sm shadow shadow-orange-500/30 gap-2 rounded-xl items-center justify-center bg-neutral-800  text-orange-500 inline-flex font-medium py-2.5 px-4 border border-orange-500 hover:bg-neutral-100 hover:scale-102 hover:-translate-y-1 duration-300 transition-all'
+                                            >
+                                                Visitar
+                                                <FaChevronRight className='group-hover:translate-x-1 transform-all duration-300 w-3 h-3'/>
+                                            </a>
+                                        )}
+
                                     {/* Links Semânticos de Ação */}
                                     <div className="flex gap-3 w-full mt-auto">
                                         <a 
@@ -100,6 +110,7 @@ export default function Projetos() {
                                             Detalhes
                                         </a>
                                     </div>
+
                                     
                                 </div>
 
