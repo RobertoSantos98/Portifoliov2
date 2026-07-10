@@ -15,7 +15,7 @@ export const Projetos =[
         id: 2,
         nome: "YouCare",
         descricao: "Uma Landing Page moderna, elegante e totalmente responsiva desenvolvida para uma Clínica fictícia. O projeto foi construído do zero utilizando as melhores práticas de componentização do React e a performance do Tailwind CSS v4.",
-        intro:"Essa LadingPage foi desenvolvida com foca em experiencia premium para os usuários",
+        intro:"Essa LadingPage foi desenvolvida com foco em experiencia premium para os usuários",
         Tecnologias: [ "React", "TypeScript", "Tailwind CSS", "Responsividade" ],
         linkGit: "https://github.com/RobertoSantos98/youcareclinica/",
         logo: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070",
